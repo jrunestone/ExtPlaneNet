@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC4BC3AA-F8BE-44D1-BFA8-BE4A9DAAC37F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExtPlaneNet</RootNamespace>
+    <AssemblyName>ExtPlaneNet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExtPlaneInterface.cs" />
+    <Compile Include="DataRef`1.cs" />
+    <Compile Include="IDataRefRepository.cs" />
+    <Compile Include="DataRefRepository.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\SubscribeCommand.cs" />
+    <Compile Include="Commands\UnsubscribeCommand.cs" />
+    <Compile Include="Commands\SetDataRefCommand.cs" />
+    <Compile Include="Receiver.cs" />
+    <Compile Include="Sender.cs" />
+    <Compile Include="ICommandQueue.cs" />
+    <Compile Include="CommandQueue.cs" />
+    <Compile Include="InputHandler.cs" />
+    <Compile Include="InputProcessors\IInputProcessor.cs" />
+    <Compile Include="InputProcessors\DataRefProcessor.cs" />
+    <Compile Include="InputProcessors\VersionProcessor.cs" />
+    <Compile Include="DataRef.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="InputProcessors\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="PrefixedHierarchical" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
