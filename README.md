@@ -1,5 +1,5 @@
 # ExtPlaneNet
-A C# (Mono) library that uses ExtPlane-Plugin to ease communication with X-Plane on all platforms. Inspired by the [ExtPlaneInterface library for Java](https://github.com/pau662/ExtPlaneInterface) by pau662.
+A C# (Mono) library that uses [ExtPlane-Plugin](https://github.com/vranki/ExtPlane) to ease communication with X-Plane on all platforms. Inspired by the [ExtPlaneInterface library for Java](https://github.com/pau662/ExtPlaneInterface) by pau662.
 
 ## License
 **GNU GPLv3**
