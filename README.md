@@ -1,5 +1,5 @@
 # ExtPlaneNet
-A C# (Mono) library that uses [ExtPlane-Plugin](https://github.com/vranki/ExtPlane) to ease communication with X-Plane on all platforms. Inspired by the [ExtPlaneInterface library for Java](https://github.com/pau662/ExtPlaneInterface) by pau662.
+A C# (Mono) library that uses the [ExtPlane plugin](https://github.com/vranki/ExtPlane) to ease communication with X-Plane on all platforms. Inspired by the [ExtPlaneInterface library for Java](https://github.com/pau662/ExtPlaneInterface) by pau662.
 
 ## License
 **GNU GPLv3**
@@ -24,7 +24,7 @@ The project is built with .NET 4.5 and Mono in the Xamarin Studio IDE but should
 
 ## How to use
 ### Prerequisites
-You need X-Plane (demo works fine) with the [ExtPlane-Plugin](https://github.com/vranki/ExtPlane) plugin installed. The library is built against .NET 4.5 (Mono).
+You need X-Plane (demo works fine) with the [ExtPlane plugin](https://github.com/vranki/ExtPlane) installed. The library is built against .NET 4.5 (Mono).
 
 ### Connecting to X-Plane
 Make sure X-Plane is started and the plugin is installed and active.
@@ -34,7 +34,7 @@ var iface = new ExtPlaneNet.ExtPlaneInterface();
 iface.Connect();
 ```
 
-This connects to ExtPlane-Plugin with the default parameters (can be changed in the constructor). The connection process is synchronous.
+This connects to the ExtPlane plugin with the default parameters (can be changed in the constructor). The connection process is synchronous.
 
 ### Subscribing to datarefs
 When connected, you must subscribe to datarefs to be able to read or write them. Full list of datarefs: http://www.xsquawkbox.net/xpsdk/docs/DataRefs.txt. Subscribing to datarefs is done asynchronously.
