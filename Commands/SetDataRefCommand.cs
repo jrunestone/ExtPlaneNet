@@ -29,7 +29,7 @@ namespace ExtPlaneNet.Commands
 				value = string.Format(CultureInfo.InvariantCulture, "[{0}]", string.Join(",", arrayValues));
 			}
 			else
-				value = Value.ToString();
+				value = Value.ToString(CultureInfo.InvariantCulture);
 
 			return string.Format(CultureInfo.InvariantCulture, "{0} {1}", DataRef, value);
 		}
