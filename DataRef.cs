@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Linq;
 
 namespace ExtPlaneNet
@@ -62,12 +63,12 @@ namespace ExtPlaneNet
 				Array array = Array.CreateInstance(type.GetElementType(), elements.Length);
 
 				for (int i = 0; i < array.Length; i++)
-					array.SetValue(Convert.ChangeType(elements[i], type.GetElementType()), i);
+					array.SetValue(Convert.ChangeType(elements[i], type.GetElementType(), CultureInfo.InvariantCulture), i);
 
 				value = array;
 			}
 			else
-				value = Convert.ChangeType(rawValue, type);
+				value = Convert.ChangeType(rawValue, type, CultureInfo.InvariantCulture);
 
 			return value;
 		}
