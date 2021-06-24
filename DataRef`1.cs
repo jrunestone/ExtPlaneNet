@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Linq;
 
 namespace ExtPlaneNet
 {
@@ -11,12 +9,19 @@ namespace ExtPlaneNet
 
 		public DataRef(string name, float accuracy = 0.0f) : base(name, accuracy)
 		{
-			
 		}
 
 		public override void SetValue(object value)
 		{
-			Value = (T)value;
+			try
+			{
+				Value = (T)value;
+				Exception = null;
+			}
+			catch (Exception ex)
+            {
+				Exception = ex;
+            }
 
 			if (Changed != null)
 				Changed(this, this);

@@ -32,10 +32,16 @@ namespace ExtPlaneNet.InputProcessors
 			string rawValue = match.Groups[3].Value;
 
 			Type type = DataRef.ParseType(rawType);
-			object value = DataRef.ParseValue(rawValue, type);
 			DataRef dataRef = DataRefRepository.Get(name, type);
-
-			dataRef.SetValue(value);
+			try
+			{
+				object value = DataRef.ParseValue(rawValue, type);
+				dataRef.SetValue(value);
+			}
+			catch (Exception ex)
+            {
+				dataRef.Exception = ex;
+            }			
 		}
 	}
 }
