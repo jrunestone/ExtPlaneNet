@@ -1,6 +1,5 @@
 using System;
 using System.Globalization;
-using System.Linq;
 
 namespace ExtPlaneNet
 {
@@ -8,6 +7,8 @@ namespace ExtPlaneNet
 	{
 		public readonly string Name;
 		public readonly float Accuracy;
+
+		public Exception Exception { get; set; }
 
 		protected DataRef(string name, float accuracy = 0.0f)
 		{

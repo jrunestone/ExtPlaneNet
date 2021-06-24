@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Globalization;
-using System.Collections.Concurrent;
 using ExtPlaneNet.Commands;
 using System.Net.Sockets;
-using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using ExtPlaneNet.InputProcessors;
@@ -127,6 +125,29 @@ namespace ExtPlaneNet
 				throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Can't set dataref value: dataref {0} isn't subscribed to", dataRef));
 
 			Commands.Enqueue(new SetDataRefCommand<T>(dataRef, value));
+		}
+
+		public void PressKey(int keyId)
+		{
+			Commands.Enqueue(new KeyStrokeCommand(keyId));
+		}
+
+		public void PressButton(int buttonId)
+		{
+			Commands.Enqueue(new ButtonPressCommand(buttonId));
+		}
+
+		public void ReleaseButton(int buttonId)
+		{
+			Commands.Enqueue(new ButtonReleaseCommand(buttonId));
+		}
+
+		public void SendCommand(string command, CommandType commandType)
+		{
+			if (string.IsNullOrWhiteSpace(command))
+				throw new ArgumentNullException("dataRef");
+
+			Commands.Enqueue(new XPlaneCommand(command, commandType));
 		}
 	}
 }
